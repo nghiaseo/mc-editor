@@ -1,0 +1,38 @@
+<div class="editor-container">
+  <dx-html-editor #editor (click)="getCaretPos()" (keyup)="getCaretPos()">
+    <dxi-mention
+      valueExpr="team"
+      displayExpr="text"
+      searchExpr="text"
+      [dataSource]="employees"
+      template="mentionTemp"
+      itemTemplate="itemTemp"
+    ></dxi-mention>
+    <span *dxTemplate="let mentionData of 'mentionTemp'">
+      {{ mentionData.value }}
+    </span>
+    <div
+      *dxTemplate="let suggetData of 'itemTemp'"
+      class="sugget-item-container row"
+    >
+      <div class="col-4"><img src="{{ suggetData.icon }}" /></div>
+      <div class="col-8">
+        <div><span>{{ suggetData.text }}</span></div>
+        <div><span>{{ suggetData.team }}</span></div>
+      </div>
+    </div>
+  </dx-html-editor>
+  <div class="mc-emoji-container" >
+    <div class="mart-toggler" (click)="showEmoji = !showEmoji"></div>
+    <div class="mc-emoji-mart" *ngIf="showEmoji">
+      <emoji-mart
+        title="Pick your emoji…"
+        emoji="point_up"
+        (emojiSelect)="showEm($event)"
+      ></emoji-mart>
+    </div>
+  </div>
+</div>
+<button (click)="sm()">content</button>
+
+<div #content></div>

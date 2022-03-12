@@ -1,0 +1,33 @@
+.editor-container{
+  position: relative;
+  .mc-emoji-container{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 20px;
+    height: 20px;
+
+    cursor: pointer;
+    .mart-toggler{
+      width: 100%;
+      height: 100%;
+      background-color: greenyellow;
+
+    }
+    .mc-emoji-mart{
+      position: absolute;
+      right: 0;
+      top:20px
+    }
+  }
+  }
+  .dx-popup-content{
+    width: 200px;
+  }
+  .sugget-item-container{
+    div img{
+      width: 100%;
+    }
+  }
+
+
