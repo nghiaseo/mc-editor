@@ -53,16 +53,16 @@ export class McEditorComponent implements OnInit {
   // }
   sm(){
     //=============get content of editor==================
-    const parser = new DOMParser()
-    const doc = parser.parseFromString(this.editor.instance.option("value"),'text/html')
-    let listId = [];
-     this.content.nativeElement.innerText = doc.body.innerHTML;
-   for(let i=0;i<doc.body.getElementsByClassName('dx-mention').length;i++){
-     listId.push(doc.body.getElementsByClassName('dx-mention')[i].getAttribute('data-id'))
-   }
+  //   const parser = new DOMParser()
+  //   const doc = parser.parseFromString(this.editor.instance.option("value"),'text/html')
+  //   let listId = [];
+  //    this.content.nativeElement.innerText = doc.body.innerHTML;
+  //  for(let i=0;i<doc.body.getElementsByClassName('dx-mention').length;i++){
+  //    listId.push(doc.body.getElementsByClassName('dx-mention')[i].getAttribute('data-id'))
+  //  }
    //===================edit post===============
-  //  const str = `<p><span class="dx-mention" spellcheck="false" data-marker="@" data-mention-value="John Heart" data-id="Engineering">﻿<span contenteditable="false"><span class="dx-template-wrapper"> John Heart </span></span>﻿</span> </p><p>asdkjak</p><p>asdsa <span class="dx-mention" spellcheck="false" data-marker="@" data-mention-value="John Heart" data-id="Engineering">﻿<span contenteditable="false"><span class="dx-template-wrapper"> John Heart </span></span>﻿</span> sdsad</p>`;
-  //  this.editor.instance.option("value",str)
+   const str = `<p><span class="dx-mention" spellcheck="false" data-marker="@" data-mention-value="John Heart" data-id="Engineering">﻿<span contenteditable="false"><span class="mc-tooltip dx-template-wrapper"> John Heart <span class="mc-tooltiptext">Tooltip text</span></span></span>﻿</span> </p><p><br></p><p><span class="dx-mention" spellcheck="false" data-marker="@" data-mention-value="Kevin Carter" data-id="Engineering">﻿<span contenteditable="false"><span class="mc-tooltip dx-template-wrapper"> Kevin Carter <span class="mc-tooltiptext">Tooltip text</span></span></span>﻿</span> </p>`;
+   this.editor.instance.option("value",str)
 
 
   }

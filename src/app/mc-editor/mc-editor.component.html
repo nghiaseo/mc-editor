@@ -8,8 +8,9 @@
       template="mentionTemp"
       itemTemplate="itemTemp"
     ></dxi-mention>
-    <span *dxTemplate="let mentionData of 'mentionTemp'">
+    <span *dxTemplate="let mentionData of 'mentionTemp'" class="mc-tooltip">
       {{ mentionData.value }}
+      <span class="mc-tooltiptext">{{mentionData.id}}<br/>{{ mentionData.value }}</span>
     </span>
     <div
       *dxTemplate="let suggetData of 'itemTemp'"
@@ -36,3 +37,6 @@
 <button (click)="sm()">content</button>
 
 <div #content></div>
+<button type="button" class="btn btn-secondary" data-toggle="tooltip" data-placement="top" title="Tooltip on top">
+  Tooltip on top
+</button>
