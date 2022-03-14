@@ -1,5 +1,5 @@
 <div class="editor-container">
-  <dx-html-editor #editor (click)="getCaretPos()" (keyup)="getCaretPos()">
+  <dx-html-editor #editor (click)="getCaretPos()" (keyup)="getCaretPos()" (onInitialized)="onInitialized($event)">
     <dxi-mention
       valueExpr="team"
       displayExpr="text"
@@ -7,6 +7,7 @@
       [dataSource]="employees"
       template="mentionTemp"
       itemTemplate="itemTemp"
+      marker="@"
     ></dxi-mention>
     <span *dxTemplate="let mentionData of 'mentionTemp'" class="mc-tooltip">
       {{ mentionData.value }}
@@ -37,6 +38,3 @@
 <button (click)="sm()">content</button>
 
 <div #content></div>
-<button type="button" class="btn btn-secondary" data-toggle="tooltip" data-placement="top" title="Tooltip on top">
-  Tooltip on top
-</button>
